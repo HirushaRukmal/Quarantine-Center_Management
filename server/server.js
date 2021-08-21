@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // import routes
-// const postRoutes = require('./routes/post');
+const employeeRoutes = require('./routes/Employee');
 // const authRoutes = require('./routes/auth');
 
 // App
@@ -28,15 +28,8 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// Route
-// app.get('*', (req, res) => {
-//     res.json({
-//         data: 'You reached nodejs api for react node crud app'
-//     });
-// });
-
 // Route Middleware
-// app.use('/api', postRoutes);
+app.use('/api', employeeRoutes);
 // app.use('/api', authRoutes);
 
 // Post
