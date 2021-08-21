@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // import routes
-const employeeRoutes = require('./routes/Employee');
-// const authRoutes = require('./routes/auth');
+const employeeRoutes = require('./routes/Employee'); //--Added by Isuru Pathum Herath--
+const employeeSalaryRoute = require('./routes/Employee-Salary'); //--Added by Isuru Pathum Herath--
 
 // App
 const app = express();
@@ -29,8 +29,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 // Route Middleware
-app.use('/api', employeeRoutes);
-// app.use('/api', authRoutes);
+app.use('/employee', employeeRoutes); //--Added by Isuru Pathum Herath--
+app.use('/salary', employeeSalaryRoute); //--Added by Isuru Pathum Herath--
 
 // Post
 const port = process.env.PORT || 8000;

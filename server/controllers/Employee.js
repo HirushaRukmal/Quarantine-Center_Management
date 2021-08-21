@@ -1,8 +1,17 @@
+/*
+    Created by - Isuru Pathum Herath
+    On - 22/08/2021
+    Name - Employee CRUD
+ */
+
 const Employee = require('../models/employee');
 const { uniqueNamesGenerator, names } = require('unique-names-generator');
 require('dotenv').config();
 
-// Add Employee
+/*
+Name - Add Employee
+Date - 22/08/2021
+ */
 exports.create = (req, res) => {
 
     const { firstName, middleName, lastName, mobileNumber, email,  DOB, address, NIC, type } = req.body
@@ -187,7 +196,11 @@ exports.create = (req, res) => {
     // // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 };
 
-//Display All Employees
+/*
+Name - Display All Employees
+Date - 22/08/2021
+ */
+
 exports.showAll = (req, res) => {
     Employee.find({})
         // .limit(10)
@@ -198,7 +211,10 @@ exports.showAll = (req, res) => {
         });
 };
 
-//Display Employee Details by Id
+/*
+Name - Display Employee Details by Id
+Date - 22/08/2021
+ */
 exports.readById = (req, res) => {
     const { employeeId } = req.params
     console.log(req.params._id)
@@ -209,7 +225,10 @@ exports.readById = (req, res) => {
         });
 };
 
-//Display Employee Details by Username
+/*
+Name - Display Employee Details by Username
+Date - 22/08/2021
+ */
 exports.readByUsername = (req, res) => {
     const { username } = req.params
     console.log(req.params.username)
@@ -220,7 +239,10 @@ exports.readByUsername = (req, res) => {
         });
 };
 
-//Display Employee Details by Phone Number
+/*
+Name - Display Employee Details by Phone Number
+Date - 22/08/2021
+ */
 exports.readByMobile = (req, res) => {
     const { mobileNumber } = req.params
     console.log(req.params.mobileNumber)
@@ -231,7 +253,10 @@ exports.readByMobile = (req, res) => {
         });
 };
 
-//Display Employee Details by NIC
+/*
+Name - Display Employee Details by NIC
+Date - 22/08/2021
+ */
 exports.readByNIC = (req, res) => {
     const { NIC } = req.params
     console.log(req.params.NIC)
@@ -242,7 +267,10 @@ exports.readByNIC = (req, res) => {
         });
 };
 
-//Update Employee Details by Employee Id
+/*
+Name - Update Employee Details by Employee Id
+Date - 22/08/2021
+ */
 exports.update = (req, res) => {
     const { employeeId } = req.params;
     const {firstName, middleName, lastName, mobileNumber, email, DOB, address, NIC, type, username, password} = req.body;
@@ -252,7 +280,10 @@ exports.update = (req, res) => {
     }) 
 }
 
-//Delete Post by Employee Id
+/*
+Name - Delete Post by Employee Id
+Date - 22/08/2021
+ */
 exports.remove = (req, res) => {
     const { employeeId } = req.params;
     Employee.findOneAndRemove({employeeId}).exec((err, post) => {
