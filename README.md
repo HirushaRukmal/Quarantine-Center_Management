@@ -1,12 +1,32 @@
 # Quarantine-Center-Management
+
+# Inatallation Guide
+<ol>
+  <li>git clone https://github.com/HirushaRukmal/Quarantine-Center-Management.git</li>
+  <li>Open the project</li>
+  <li>cd server</li>
+  <li>npm i</li>
+  <li>npm start</li>
+  <li>cd ..</li>
+  <li>cd client</li>
+  <li>npm i</li>
+  <li>npm start</li>
+</ol>
+
 # folder-structure
 
-client > <br>
-server > <br>
-    contollers      - Business Logic <br>
-    models          - DB tables <br>
-    node_modules     <br>
-    routes           <br>   
+<b>client </br> <br>
+<b>server </br> <br>
+<ul>
+    <li>contollers      - Business Logic</li>
+    <li>models          - DB tables</li>
+    <li>node_modules    - All node packages</li>
+    <li>routes          - Redirect paths</li>
+</ul>
+    
+    
+        
+               
 
 # Used Packages
 
