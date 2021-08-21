@@ -10,8 +10,7 @@ server > <br>
 
 # Used Packages
 
-<br>  
-<br><b>Common Packages</b><br>
+<b>Common Packages</b><br>
 <ul>
   <li>express - Handle Requests and Responses</li>
   <li>mongoos - Interact with MongoDB</li>
