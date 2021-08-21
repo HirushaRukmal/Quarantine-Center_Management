@@ -23,7 +23,6 @@ server > <br>
   <li>nodemon - Helps to automatically restart the node application when file changes</li>
 </ul><br>
 
-<br>  
 <br><b>Additional Packages</b><br>
 <ul>
   <li>unique-names-generator - Generate random unique names</li>
