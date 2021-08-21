@@ -10,8 +10,7 @@ server > <br>
 
 # Used Packages
 
-<br>  
-<br><b>Common Packages</b><br>
+<b>Common Packages</b><br>
 <ul>
   <li>express - Handle Requests and Responses (https://www.npmjs.com/package/express)</li>
   <li>mongoos - Interact with MongoDB (https://www.npmjs.com/package/mongoose)</li>
@@ -23,7 +22,6 @@ server > <br>
   <li>nodemon - Helps to automatically restart the node application when file changes (https://www.npmjs.com/package/nodemon)</li>
 </ul><br>
 
-<br>  
 <br><b>Additional Packages</b><br>
 <ul>
   <li>unique-names-generator - Generate random unique names (https://www.npmjs.com/package/unique-names-generator)</li>
