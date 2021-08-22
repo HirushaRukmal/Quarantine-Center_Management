@@ -67,6 +67,7 @@ exports.create = (req, res) => {
         // console.log(`Username: ${username}`);
         // console.log(`Password: ${password}`);
     
+        //Check Empty Parameters
         switch(true) {
             // case !employeeId:
             //     return res.status(400).json({
@@ -98,12 +99,42 @@ exports.create = (req, res) => {
                 });
         }
     
+        //Check Server Errors
         Employee.create({employeeId, firstName, middleName, lastName, mobileNumber, email, DOB, address, NIC, type, username, password}, (err, employee) => {
+            
+            //Check Server Errors
             if(err) {
                 console.log(err)
-                res.status(400).json({
-                    error: 'Bad Request! Try Again!'
-                })
+                console.log("Error = " + err.code)
+                console.log("Key Pattern = " + err.keyPattern.NIC)
+                console.log("Key Pattern = " + err.keyPattern.mobileNumber)
+                console.log("Error Message = " + err.message)
+                if(err.keyPattern.mobileNumber == 1) {
+                    res.status(400).json({
+                        error: 'Mobile Number is already registered! Try another Mobile Number!'
+                    });
+                }
+                else if(err.keyPattern.NIC == 1) {
+                    res.status(400).json({
+                        error: 'NIC is already registered! Try another NIC!'
+                    });
+                }
+                else if(err.keyPattern.employeeId == 1) {
+                    res.status(400).json({
+                        error: 'Employee ID is already registered! Try Again!'
+                    });
+                }
+                else if(err.keyPattern.username == 1) {
+                    res.status(400).json({
+                        error: 'Username is already registered! Try Again!'
+                    });
+                }
+                else {
+                    res.status(400).json({
+                        error: 'Internal Server Error! Try Again!'
+                    });
+                }
+                
             }
             res.json(employee);
         });

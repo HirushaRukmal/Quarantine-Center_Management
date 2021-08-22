@@ -8,9 +8,10 @@ const express = require('express');
 const router = express.Router();
 
 //Import Cntroller Methos
-const {create} = require('../controllers/Employee-Salary');
+const {create, showAll} = require('../controllers/Employee-Salary');
 
 //Controller Routes
 router.post('/add', create);
+router.get('/all-salary', showAll);
 
 module.exports = router;
