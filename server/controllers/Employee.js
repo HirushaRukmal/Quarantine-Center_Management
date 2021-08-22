@@ -102,7 +102,7 @@ exports.create = (req, res) => {
             if(err) {
                 console.log(err)
                 res.status(400).json({
-                    error: 'Duplicate Employee ID! Try Again'
+                    error: 'Bad Request! Try Again!'
                 })
             }
             res.json(employee);
