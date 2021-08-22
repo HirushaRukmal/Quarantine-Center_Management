@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // import routes
-// const postRoutes = require('./routes/post');
-// const authRoutes = require('./routes/auth');
+const employeeRoutes = require('./routes/Employee'); //--Added by Isuru Pathum Herath--
+const employeeSalaryRoute = require('./routes/Employee-Salary'); //--Added by Isuru Pathum Herath--
 
 // App
 const app = express();
@@ -28,24 +28,13 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-// Route
-// app.get('*', (req, res) => {
-//     res.json({
-//         data: 'You reached nodejs api for react node crud app'
-//     });
-// });
-
 // Route Middleware
-// app.use('/api', postRoutes);
-// app.use('/api', authRoutes);
+app.use('/employee', employeeRoutes); //--Added by Isuru Pathum Herath--
+app.use('/salary', employeeSalaryRoute); //--Added by Isuru Pathum Herath--
 
 // Post
 const port = process.env.PORT || 8000;
-<<<<<<< Updated upstream
-app.listen(port, () => console.log(`Server is running on port ${port}`));
-=======
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
-
+//Isuru Pathum Herath
 //test change
->>>>>>> Stashed changes
