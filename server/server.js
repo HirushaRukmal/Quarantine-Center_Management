@@ -41,4 +41,11 @@ app.use(bodyParser.json());
 
 // Post
 const port = process.env.PORT || 8000;
+<<<<<<< Updated upstream
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+=======
+app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+//test change
+>>>>>>> Stashed changes
