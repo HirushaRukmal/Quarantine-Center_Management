@@ -36,5 +36,3 @@ app.use('/salary', employeeSalaryRoute); //--Added by Isuru Pathum Herath--
 const port = process.env.PORT || 8000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
-//Test Isuru Pathum Herath
-//merge test
