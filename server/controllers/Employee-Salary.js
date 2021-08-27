@@ -41,4 +41,17 @@ exports.create = (req, res) => {
 
 }
 
+/*
+Name - Get All Salary
+Date - 22/08/2021
+ */
 
+exports.showAll = (req, res) => {
+    EmployeeSalary.find({})
+        // .limit(10)
+        .sort({ createdAt: -1})
+        .exec((err, EmployeeSalary) => {
+            if(err) console.log(err);
+            res.json(EmployeeSalary);
+        });
+};
