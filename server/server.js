@@ -1,36 +1,47 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const express = require("express");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 // import routes
-const employeeRoutes = require('./routes/Employee'); //--Added by Isuru Pathum Herath--
-const employeeSalaryRoute = require('./routes/Employee-Salary'); //--Added by Isuru Pathum Herath--
+const employeeRoutes = require("./routes/Employee"); //--Added by Isuru Pathum Herath--
+const employeeSalaryRoute = require("./routes/Employee-Salary"); //--Added by Isuru Pathum Herath--
+
+const FoodsRoute = require("./routes/foodsRoute");
+const CommentRoute = require("./routes/commentRoute");
+const OrderRoute = require("./routes/orderRoute");
+const OrderDetailsRoute = require("./routes/orderDetailsRoute");
 
 // App
 const app = express();
+app.use(bodyParser.json());
 
-// Database
+// Databas
 mongoose
-    .connect(process.env.DATABASE, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log('DB Connected'))
-    .catch(err => console.log(err));
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("DB Connected"))
+  .catch((err) => console.log(err));
 
 // Middlewares
 app.use(cors());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 // Route Middleware
-app.use('/employee', employeeRoutes); //--Added by Isuru Pathum Herath--
-app.use('/salary', employeeSalaryRoute); //--Added by Isuru Pathum Herath--
+app.use("/employee", employeeRoutes); //--Added by Isuru Pathum Herath--
+app.use("/salary", employeeSalaryRoute); //--Added by Isuru Pathum Herath--
+
+app.use("/foods", FoodsRoute);
+app.use("/comment", CommentRoute);
+app.use("/order", OrderRoute);
+app.use("/orderdetails", OrderDetailsRoute);
 
 // Post
 const port = process.env.PORT || 8000;
